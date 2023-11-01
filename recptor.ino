@@ -13,7 +13,6 @@ int pos = 0;
 void setup()
 {
     Serial.begin(9600);
-    Serial.println("setup");
     servo.attach(7);
 
     if (!driver.init())
@@ -45,15 +44,13 @@ void loop()
         {
             statusServo = 1;
             servo.write(2700);
-            Serial.println("roda pro 360");
         }
         else
         {
             if ((str.equals("fecha")) && statusServo == 1)
             {
                 statusServo = 0;
-                servo.write(0);
-                Serial.println("roda pro 0");
+                servo.write(750);
             }
         }
     }

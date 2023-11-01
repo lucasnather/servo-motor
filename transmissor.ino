@@ -8,7 +8,6 @@ RH_ASK driver;
 void setup()
 {
     Serial.begin(9600);
-    Serial.println("setup");
     pinMode(botaoAbrir, INPUT_PULLUP);
     pinMode(botaoFechar, INPUT_PULLUP);
 
