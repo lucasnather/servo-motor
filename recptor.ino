@@ -5,15 +5,18 @@
 RH_ASK driver;
 ServoTimer2 servo;
 
-String str = "";
 #define pinoServo 7
+
+String str = "";
+
 int statusServo = 0;
 int pos = 0;
 
 void setup()
 {
     Serial.begin(9600);
-    servo.attach(7);
+    Serial.println("setup");
+    servo.attach(pinoServo);
 
     if (!driver.init())
     {
@@ -31,7 +34,7 @@ void loop()
 
     if (driver.recv(buf, &buflen))
     {
-        Serial.println("recebe...");
+        Serial.print("recebe");
         str = "";
         int i;
 
